@@ -13,15 +13,6 @@ import pandas as pd
 file_path = "Cultivos_permanentes.csv"  # Asegúrate que esté en el mismo repositorio
 df = pd.read_csv(file_path)
 
-# Mostrar las primeras filas para confirmar carga
-print(df.head())
-
-# Cargar la hoja principal
-df = xls.parse('2000-2023')
-
-# Mostrar las primeras filas para examinar la estructura
-df.head()
-
 # Filtrar solo los cultivos de interés: cacao y chontaduro
 df_filtrado = df[df['Cultivo'].str.lower().isin(['cacao', 'chontaduro'])]
 
